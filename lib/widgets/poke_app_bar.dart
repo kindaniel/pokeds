@@ -18,19 +18,19 @@ class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             Image.asset(
               'assets/images/header_pokeball.png',
-              height: 32.r,
+              height: 40.r,
               color: PokedsColors.primaryColor,
             ),
             SizedBox(
-              width: 16.w,
+              width: 8.w,
             ),
             Text(
-              'Pokedéx',
+              'Pokébot',
               style: TextStyle(
-                  color: PokedsColors.primaryColor,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24.sp,
-                  letterSpacing: 1.sp),
+                color: PokedsColors.primaryColor,
+                fontWeight: FontWeight.w700,
+                fontSize: 24.sp,
+              ),
             )
           ],
         ),

@@ -7,7 +7,7 @@ import 'package:poke_design_system/widgets/poke_card.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 final _plugins = initializePlugins(
-  contentsSidePanel: true,
+  contentsSidePanel: false,
   knobsSidePanel: false,
 );
 
@@ -18,7 +18,7 @@ class PokeDsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(393, 852),
       builder: (_, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'PokeDS',
@@ -47,7 +47,12 @@ class PokeDsApp extends StatelessWidget {
                 Story(
                   name: 'Poke Card',
                   description: 'Simple Poke Card Widget.',
-                  builder: (context) => const Center(child: PokeCard()),
+                  builder: (context) => const Center(
+                      child: PokeCard(
+                    pokemonImage:
+                        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png',
+                    pokemonName: 'Pikachu',
+                  )),
                 ),
                 Story(
                   name: 'App Bar',

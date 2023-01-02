@@ -13,7 +13,12 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [PokeCard()],
+          children: [
+            PokeCard(
+              pokemonName: 'Bulbasaur',
+              pokemonImage: '',
+            )
+          ],
         ),
       ),
     );
