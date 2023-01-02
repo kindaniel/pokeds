@@ -16,7 +16,7 @@ class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: EdgeInsets.only(left: 10.w),
       child: AppBar(
         centerTitle: false,
-        backgroundColor: const Color(0xffF7F7F7),
+        backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: PokedsColors.primaryColor),
         elevation: 0,
         title: Row(
