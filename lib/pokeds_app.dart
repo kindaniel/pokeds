@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:poke_design_system/widgets/poke_app_bar.dart';
 import 'package:poke_design_system/widgets/poke_card.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 final _plugins = initializePlugins(
-  contentsSidePanel: false,
+  contentsSidePanel: true,
   knobsSidePanel: false,
-  initialDeviceFrameData: DeviceFrameData(
-    device: Devices.ios.iPhone13,
-  ),
 );
 
 class PokeDsApp extends StatelessWidget {
@@ -50,6 +48,11 @@ class PokeDsApp extends StatelessWidget {
                   name: 'Poke Card',
                   description: 'Simple Poke Card Widget.',
                   builder: (context) => const Center(child: PokeCard()),
+                ),
+                Story(
+                  name: 'App Bar',
+                  description: 'PokeDex App Bar',
+                  builder: (context) => const Center(child: PokeAppBar()),
                 ),
               ],
             ),
