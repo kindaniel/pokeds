@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:poke_design_system/theme/pokeds_colors.dart';
 
 class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const PokeAppBar({Key? key}) : super(key: key);
@@ -11,13 +12,14 @@ class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         centerTitle: false,
         backgroundColor: const Color(0xffF7F7F7),
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(color: PokedsColors.primaryColor),
         elevation: 0,
         title: Row(
           children: [
             Image.asset(
               'assets/images/header_pokeball.png',
               height: 32.r,
+              color: PokedsColors.primaryColor,
             ),
             SizedBox(
               width: 16.w,
@@ -25,7 +27,7 @@ class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
             Text(
               'Pokedéx',
               style: TextStyle(
-                  color: Colors.black,
+                  color: PokedsColors.primaryColor,
                   fontWeight: FontWeight.w700,
                   fontSize: 24.sp,
                   letterSpacing: 1.sp),

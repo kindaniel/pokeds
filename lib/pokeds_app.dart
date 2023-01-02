@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:poke_design_system/home_page.dart';
-import 'package:poke_design_system/main.dart';
+import 'package:poke_design_system/widgets/poke_card.dart';
+import 'package:storybook_flutter/storybook_flutter.dart';
+
+final _plugins = initializePlugins(
+  contentsSidePanel: false,
+  knobsSidePanel: false,
+  initialDeviceFrameData: DeviceFrameData(
+    device: Devices.ios.iPhone13,
+  ),
+);
 
 class PokeDsApp extends StatelessWidget {
   const PokeDsApp({Key? key}) : super(key: key);
@@ -15,7 +23,7 @@ class PokeDsApp extends StatelessWidget {
       designSize: const Size(375, 812),
       builder: (_, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Valeu',
+        title: 'PokeDS',
         theme: ThemeData(
           iconTheme: const IconThemeData(
             color: Colors.grey,
@@ -33,7 +41,19 @@ class PokeDsApp extends StatelessWidget {
           );
         },
         onGenerateRoute: (RouteSettings settings) {
-          return MaterialPageRoute(builder: (_) => HomePage());
+          return MaterialPageRoute(
+            builder: (_) => Storybook(
+              initialStory: 'Widgets',
+              plugins: _plugins,
+              stories: [
+                Story(
+                  name: 'Poke Card',
+                  description: 'Simple Poke Card Widget.',
+                  builder: (context) => const Center(child: PokeCard()),
+                ),
+              ],
+            ),
+          );
         },
       ),
     );

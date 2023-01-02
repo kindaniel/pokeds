@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poke_design_system/pokeds_app.dart';
+import 'package:poke_design_system/widgets/poke_card.dart';
+import 'package:storybook_flutter/storybook_flutter.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const PokeDsApp();
-  }
-}
+void main() => runApp(const PokeDsApp());
