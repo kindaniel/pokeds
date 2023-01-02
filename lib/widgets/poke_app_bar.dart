@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:poke_design_system/theme/pokeds_colors.dart';
 
 class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const PokeAppBar({Key? key}) : super(key: key);
+  const PokeAppBar({Key? key, required this.title, required this.image})
+      : super(key: key);
+
+  final String title;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: Row(
           children: [
             Image.asset(
-              'assets/images/header_pokeball.png',
+              image,
               height: 40.r,
               color: PokedsColors.primaryColor,
             ),
@@ -25,8 +30,8 @@ class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
               width: 8.w,
             ),
             Text(
-              'Pokébot',
-              style: TextStyle(
+              title,
+              style: GoogleFonts.lato(
                 color: PokedsColors.primaryColor,
                 fontWeight: FontWeight.w700,
                 fontSize: 24.sp,

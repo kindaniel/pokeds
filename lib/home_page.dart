@@ -9,11 +9,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF7F7F7),
-      appBar: const PokeAppBar(),
+      appBar: const PokeAppBar(
+        image: 'assets/images/header_pokeball.png',
+        title: 'Pokebot',
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [
+          children: const [
             PokeCard(
               pokemonName: 'Bulbasaur',
               pokemonImage: '',

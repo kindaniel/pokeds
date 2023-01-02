@@ -48,16 +48,22 @@ class PokeDsApp extends StatelessWidget {
                   name: 'Poke Card',
                   description: 'Simple Poke Card Widget.',
                   builder: (context) => const Center(
-                      child: PokeCard(
-                    pokemonImage:
-                        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png',
-                    pokemonName: 'Pikachu',
-                  )),
+                    child: PokeCard(
+                      pokemonImage:
+                          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png',
+                      pokemonName: 'Pikachu',
+                    ),
+                  ),
                 ),
                 Story(
                   name: 'App Bar',
                   description: 'PokeDex App Bar',
-                  builder: (context) => const Center(child: PokeAppBar()),
+                  builder: (context) => const Center(
+                    child: PokeAppBar(
+                      title: 'Pokébot',
+                      image: 'assets/images/header_pokeball.png',
+                    ),
+                  ),
                 ),
               ],
             ),
