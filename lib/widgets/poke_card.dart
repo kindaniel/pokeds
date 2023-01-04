@@ -13,46 +13,46 @@ class PokeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: Colors.white,
         border: Border.all(
           color: PokedsColors.primaryColor,
         ),
         borderRadius: BorderRadius.circular(8.0.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(.6),
+            blurRadius: 4.r,
+            offset: const Offset(0, 4), // Shadow position
+          ),
+        ],
       ),
       height: 129.h,
       width: 114.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Align(
-          //   alignment: Alignment.centerRight,
-          //   child: Padding(
-          //     padding: EdgeInsets.only(right: 8.0.w),
-          //     child: Text(
-          //       '#001',
-          //       style:
-          //           TextStyle(color: PokedsColors.primaryColor, fontSize: 8.sp),
-          //       textAlign: TextAlign.end,
-          //     ),
-          //   ),
-          // ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0.r),
               child: Image.network(pokemonImage),
             ),
           ),
           Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(8.r),
-                  bottomLeft: Radius.circular(8.r),
-                ),
-                color: PokedsColors.primaryColor),
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(8.r),
+                bottomLeft: Radius.circular(8.r),
+              ),
+              color: PokedsColors.primaryColor,
+            ),
             height: 41.h,
             child: Center(
               child: Text(
                 pokemonName,
-                style: TextStyle(color: Colors.white, fontSize: 10.sp),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 10.sp,
+                ),
               ),
             ),
           )
