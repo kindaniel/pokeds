@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:poke_design_system/widgets/base_stats_widget.dart';
 import 'package:poke_design_system/widgets/poke_app_bar.dart';
 import 'package:poke_design_system/widgets/poke_card.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
@@ -62,6 +63,16 @@ class PokeDsApp extends StatelessWidget {
                     child: PokeAppBar(
                       title: 'Pokébot',
                       image: 'assets/images/header_pokeball.png',
+                    ),
+                  ),
+                ),
+                Story(
+                  name: 'Base Stats Widget',
+                  description: 'PokeDex App Bar',
+                  builder: (context) => const Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 28.0),
+                      child: BaseStatsWidget(name: 'VIDA', value: 55),
                     ),
                   ),
                 ),
